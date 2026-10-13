@@ -6,7 +6,7 @@
         }
     ],
     "description": "Stop windows from being pinned when you (accidentally) move them around. Only windows you pin manually stay pinned.",
-    "name": "Don't Auto-Pin",
+    "name": "Don't auto-pin moved windows",
     "summary": "Only pin windows when you click the pin.",
     "tags": [
         "Misc",
