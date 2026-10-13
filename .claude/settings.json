@@ -1,0 +1,20 @@
+{
+  "enabledPlugins": {
+    "tf3@transport-fever-3-modding": true
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/check-mod-file.sh",
+            "timeout": 120,
+            "statusMessage": "Checking mod file..."
+          }
+        ]
+      }
+    ]
+  }
+}
