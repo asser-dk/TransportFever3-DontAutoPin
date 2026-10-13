@@ -15,7 +15,8 @@ an unpinned window no longer pins it.
 ## Checks
 
 - Type check from the repo root:
-  `~/.luarocks/bin/tl check src/content/gui/fenris_dont_auto_pin/dont_auto_pin.script.tl`
+  `~/.luarocks/bin/tl check src/content/gui/fenris_dont_auto_pin/dont_auto_pin.script.tl`. The `tf3`
+  plugin's hook also runs it, and schema validation of the mod's JSON files, after every edit.
 - `tlconfig.lua` and `all_def.tl` are copies of the workspace (`..`) masters; keep them in sync.
 - No automated tests. Verification is in-game by the user; afterwards grep the game log for
   `fenris_dont_auto_pin` (expect `builtin.Window replaced`, no warnings).
