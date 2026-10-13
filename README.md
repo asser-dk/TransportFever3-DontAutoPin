@@ -18,4 +18,5 @@ Type check:
 tl check src/content/gui/fenris_dont_auto_pin/dont_auto_pin.script.tl
 ```
 
-The cover's source is `art/cover.svg`; the in-game cover is exported to `src/_metadata/0.png`.
+The cover's source is `art/cover.svg`. Render it to the in-game cover, `src/_metadata/0.png`, with
+`scripts/render_cover.sh` (needs `rsvg-convert` from librsvg).

@@ -9,6 +9,7 @@ Update this file when the stack changes.
 | Teal config | `tlconfig.lua` + `all_def.tl` in the repo root, copied from the workspace (`..`) |
 | GUI | TF3 React-style Lua GUI (`::/gui/main/react.lua`, `builtin.lua`); hooked via `react-replacement-config` |
 | teal-language-server | 0.2.1, connected by the `tf3` plugin; reads the repo's `tlconfig.lua` |
+| Cover image | `art/cover.svg` → `src/_metadata/0.png` via `scripts/render_cover.sh` (`rsvg-convert`, librsvg) |
 | JSON validation | `npx ajv-cli@5` against `~/Documents/documentation/references/transport-fever-3/schemas/` |
 | Claude Code | `tf3` plugin (local `transport-fever-3-modding` marketplace, `..`): skills and the edit-check hook |
 | VCS | Git |
