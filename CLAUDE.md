@@ -14,9 +14,9 @@ an unpinned window no longer pins it.
 
 ## Checks
 
-- Type check from the workspace root (`..`), where `tlconfig.lua` lives; from inside this repo the TF3
-  type defs aren't found:
-  `cd .. && ~/.luarocks/bin/tl check dont_auto_pin/src/content/gui/fenris_dont_auto_pin/dont_auto_pin.script.tl`
+- Type check from the repo root:
+  `~/.luarocks/bin/tl check src/content/gui/fenris_dont_auto_pin/dont_auto_pin.script.tl`
+- `tlconfig.lua` and `all_def.tl` are copies of the workspace (`..`) masters; keep them in sync.
 - No automated tests. Verification is in-game by the user; afterwards grep the game log for
   `fenris_dont_auto_pin` (expect `builtin.Window replaced`, no warnings).
 - After adding, removing or renaming files under `src/content/`, run `/tf3:stage-mod` to regenerate
