@@ -1,0 +1,16 @@
+{
+    "authors": [
+        {
+            "name": "fenris",
+            "role": "CREATOR"
+        }
+    ],
+    "description": "Don't auto-pin windows when moving them.",
+    "name": "Don't Auto-Pin",
+    "summary": "Only pin windows when you click the pin.",
+    "tags": [
+        "Misc",
+        "Script Mod"
+    ],
+    "url": ""
+}
