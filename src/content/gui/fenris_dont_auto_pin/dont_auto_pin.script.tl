@@ -13,16 +13,16 @@ local function withUnpinAfterMove(value : any) : any
 	if props.pinnable ~= true or type(props.onMovedChange) ~= "function" or type(props.onPinned) ~= "function" then
 		return value
 	end
-	local onMovedChange = props.onMovedChange as function()
+	local onMovedChange = props.onMovedChange as function(...: any)
 	local onPinned = props.onPinned as function(boolean)
 
 	local copy : {string : any} = {}
 	for k, v in pairs(props) do
 		copy[k] = v
 	end
-	copy.onMovedChange = function()
-		local wasPinned = props.pinned == true
-		onMovedChange()
+	local wasPinned = props.pinned == true
+	copy.onMovedChange = function(...: any)
+		onMovedChange(...)
 		if not wasPinned then
 			onPinned(false)
 		end
