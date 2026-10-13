@@ -1,0 +1,683 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1920"
+   height="1080"
+   viewBox="0 0 1920 1080"
+   version="1.1"
+   id="svg52"
+   sodipodi:docname="cover.svg"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview52"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="0.99739583"
+     inkscape:cx="960"
+     inkscape:cy="539.90601"
+     inkscape:window-width="2560"
+     inkscape:window-height="2852"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg52" />
+  <defs
+     id="defs14">
+    <linearGradient
+       id="bg"
+       x1="0"
+       y1="0"
+       x2="0"
+       y2="1">
+      <stop
+         offset="0"
+         stop-color="#F7F8F9"
+         id="stop1" />
+      <stop
+         offset="1"
+         stop-color="#E4E8EC"
+         id="stop2" />
+    </linearGradient>
+    <radialGradient
+       id="glow"
+       cx="960"
+       cy="520"
+       r="900"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0"
+         stop-color="#FFFFFF"
+         stop-opacity="0.85"
+         id="stop3" />
+      <stop
+         offset="1"
+         stop-color="#FFFFFF"
+         stop-opacity="0"
+         id="stop4" />
+    </radialGradient>
+    <linearGradient
+       id="plane"
+       x1="0"
+       y1="0"
+       x2="1"
+       y2="1">
+      <stop
+         offset="0"
+         stop-color="#D5DBE1"
+         stop-opacity="0.55"
+         id="stop5" />
+      <stop
+         offset="1"
+         stop-color="#D5DBE1"
+         stop-opacity="0"
+         id="stop6" />
+    </linearGradient>
+    <pattern
+       id="dots"
+       width="40"
+       height="40"
+       patternUnits="userSpaceOnUse">
+      <circle
+         cx="20"
+         cy="20"
+         r="2.5"
+         fill="#BCC4CC"
+         id="circle6" />
+    </pattern>
+    <radialGradient
+       id="dots-fade"
+       cx="960"
+       cy="540"
+       r="1100"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0.25"
+         stop-color="#FFFFFF"
+         stop-opacity="0"
+         id="stop7" />
+      <stop
+         offset="0.7"
+         stop-color="#FFFFFF"
+         stop-opacity="0.7"
+         id="stop8" />
+      <stop
+         offset="1"
+         stop-color="#FFFFFF"
+         stop-opacity="0.15"
+         id="stop9" />
+    </radialGradient>
+    <mask
+       id="dots-mask">
+      <rect
+         width="1920"
+         height="1080"
+         fill="url(#dots-fade)"
+         id="rect9" />
+    </mask>
+    <filter
+       id="shadow"
+       x="-0.13770324"
+       y="-0.1770175"
+       width="1.3147207"
+       height="1.361665">
+      <feGaussianBlur
+         in="SourceAlpha"
+         stdDeviation="22"
+         id="feGaussianBlur9" />
+      <feOffset
+         dy="18"
+         result="blur"
+         id="feOffset9" />
+      <feFlood
+         flood-color="#1C2733"
+         flood-opacity="0.16"
+         id="feFlood9" />
+      <feComposite
+         in2="blur"
+         operator="in"
+         id="feComposite9" />
+      <feMerge
+         id="feMerge10">
+        <feMergeNode
+           id="feMergeNode9" />
+        <feMergeNode
+           in="SourceGraphic"
+           id="feMergeNode10" />
+      </feMerge>
+    </filter>
+    <clipPath
+       id="window-clip">
+      <rect
+         x="0"
+         y="15"
+         width="960"
+         height="625"
+         rx="40"
+         id="rect10" />
+    </clipPath>
+    <clipPath
+       id="slash-clip">
+      <circle
+         r="91.5" />
+    </clipPath>
+    <path
+       id="cursor-shape"
+       d="M 0 0 L 0 76 L 19 58 L 32 88 L 46 82 L 33 53 L 58 53 Z"
+       stroke-width="6"
+       stroke-linejoin="round" />
+    <g
+       id="pin-shape">
+      <rect
+         x="-58"
+         y="-167"
+         width="116"
+         height="26"
+         rx="13"
+         id="rect13" />
+      <path
+         d="M -30 -141 L 30 -141 L 26 -50 Q 80 -30 80 0 L -80 0 Q -80 -30 -26 -50 Z"
+         id="path13" />
+      <path
+         d="M -8 0 L 8 0 L 1 136 L -1 136 Z"
+         id="path14" />
+    </g>
+  </defs>
+  <g
+     id="backdrop">
+    <rect
+       id="background"
+       width="1920"
+       height="1080"
+       fill="url(#bg)" />
+    <path
+       id="plane-left"
+       d="M 0 0 L 620 0 L 0 760 Z"
+       fill="url(#plane)" />
+    <path
+       id="plane-right"
+       d="M 1920 1080 L 1180 1080 L 1920 260 Z"
+       fill="url(#plane)" />
+    <rect
+       id="dot-grid"
+       width="1920"
+       height="1080"
+       fill="url(#dots)"
+       mask="url(#dots-mask)" />
+    <rect
+       id="glow-centre"
+       width="1920"
+       height="1080"
+       fill="url(#glow)" />
+  </g>
+  <g
+     id="icon"
+     transform="translate(-20 25)">
+    <g
+       id="trail"
+       fill="none"
+       stroke="#AEB6BF"
+       stroke-width="16">
+      <rect
+         x="250"
+         y="285"
+         width="960"
+         height="625"
+         rx="40"
+         opacity="0.3"
+         id="rect14" />
+      <rect
+         x="385"
+         y="285"
+         width="960"
+         height="625"
+         rx="40"
+         opacity="0.6"
+         id="rect15" />
+    </g>
+    <g
+       id="window"
+       transform="translate(520 270)"
+       filter="url(#shadow)">
+      <rect
+         y="15"
+         width="960"
+         height="625"
+         rx="40"
+         fill="#FFFFFF"
+         id="rect16" />
+      <rect
+         y="15"
+         width="960"
+         height="90"
+         fill="#283037"
+         clip-path="url(#window-clip)"
+         id="rect17" />
+      <g
+         id="timetable">
+        <g
+           id="header"
+           fill="#B4BCC5">
+          <rect
+             x="70"
+             y="182"
+             width="60"
+             height="22"
+             rx="11"
+             id="rect18" />
+          <rect
+             x="170"
+             y="182"
+             width="120"
+             height="22"
+             rx="11"
+             id="rect19" />
+          <rect
+             x="340"
+             y="182"
+             width="200"
+             height="22"
+             rx="11"
+             id="rect20" />
+          <rect
+             x="770"
+             y="182"
+             width="90"
+             height="22"
+             rx="11"
+             id="rect21" />
+        </g>
+        <rect
+           id="header-rule"
+           x="70"
+           y="226"
+           width="820"
+           height="4"
+           rx="2"
+           fill="#C9D0D7" />
+        <rect
+           id="next-departure"
+           x="50"
+           y="244"
+           width="860"
+           height="62"
+           rx="14"
+           fill="#345373"
+           fill-opacity="0.1" />
+        <g
+           id="row-rules"
+           fill="#EDF0F3">
+          <rect
+             x="70"
+             y="313"
+             width="820"
+             height="3"
+             rx="1.5"
+             id="rect22" />
+          <rect
+             x="70"
+             y="383"
+             width="820"
+             height="3"
+             rx="1.5"
+             id="rect23" />
+          <rect
+             x="70"
+             y="453"
+             width="820"
+             height="3"
+             rx="1.5"
+             id="rect24" />
+          <rect
+             x="70"
+             y="523"
+             width="820"
+             height="3"
+             rx="1.5"
+             id="rect25" />
+        </g>
+        <g
+           id="line-badges">
+          <circle
+             cx="100"
+             cy="275"
+             r="17"
+             fill="#2F80ED"
+             id="rect26" />
+          <circle
+             cx="100"
+             cy="345"
+             r="17"
+             fill="#F2994A"
+             id="rect27" />
+          <circle
+             cx="100"
+             cy="415"
+             r="17"
+             fill="#27AE60"
+             id="rect28" />
+          <circle
+             cx="100"
+             cy="485"
+             r="17"
+             fill="#2F80ED"
+             id="rect29" />
+          <circle
+             cx="100"
+             cy="555"
+             r="17"
+             fill="#2BB3B1"
+             id="rect30" />
+        </g>
+        <g
+           id="times"
+           fill="#D3D9DF">
+          <rect
+             x="170"
+             y="262"
+             width="46"
+             height="26"
+             rx="8"
+             id="rect31" />
+          <circle
+             cx="230"
+             cy="269"
+             r="4"
+             id="circle31" />
+          <circle
+             cx="230"
+             cy="281"
+             r="4"
+             id="circle32" />
+          <rect
+             x="244"
+             y="262"
+             width="46"
+             height="26"
+             rx="8"
+             id="rect32" />
+          <rect
+             x="170"
+             y="332"
+             width="46"
+             height="26"
+             rx="8"
+             id="rect33" />
+          <circle
+             cx="230"
+             cy="339"
+             r="4"
+             id="circle33" />
+          <circle
+             cx="230"
+             cy="351"
+             r="4"
+             id="circle34" />
+          <rect
+             x="244"
+             y="332"
+             width="46"
+             height="26"
+             rx="8"
+             id="rect34" />
+          <rect
+             x="170"
+             y="402"
+             width="46"
+             height="26"
+             rx="8"
+             id="rect35" />
+          <circle
+             cx="230"
+             cy="409"
+             r="4"
+             id="circle35" />
+          <circle
+             cx="230"
+             cy="421"
+             r="4"
+             id="circle36" />
+          <rect
+             x="244"
+             y="402"
+             width="46"
+             height="26"
+             rx="8"
+             id="rect36" />
+          <rect
+             x="170"
+             y="472"
+             width="46"
+             height="26"
+             rx="8"
+             id="rect37" />
+          <circle
+             cx="230"
+             cy="479"
+             r="4"
+             id="circle37" />
+          <circle
+             cx="230"
+             cy="491"
+             r="4"
+             id="circle38" />
+          <rect
+             x="244"
+             y="472"
+             width="46"
+             height="26"
+             rx="8"
+             id="rect38" />
+          <rect
+             x="170"
+             y="542"
+             width="46"
+             height="26"
+             rx="8"
+             id="rect39" />
+          <circle
+             cx="230"
+             cy="549"
+             r="4"
+             id="circle39" />
+          <circle
+             cx="230"
+             cy="561"
+             r="4"
+             id="circle40" />
+          <rect
+             x="244"
+             y="542"
+             width="46"
+             height="26"
+             rx="8"
+             id="rect40" />
+        </g>
+        <g
+           id="destinations"
+           fill="#D3D9DF">
+          <rect
+             x="340"
+             y="262"
+             width="300"
+             height="26"
+             rx="13"
+             id="rect41" />
+          <rect
+             x="340"
+             y="332"
+             width="220"
+             height="26"
+             rx="13"
+             id="rect42" />
+          <rect
+             x="340"
+             y="402"
+             width="340"
+             height="26"
+             rx="13"
+             id="rect43" />
+          <rect
+             x="340"
+             y="472"
+             width="250"
+             height="26"
+             rx="13"
+             id="rect44" />
+          <rect
+             x="340"
+             y="542"
+             width="190"
+             height="26"
+             rx="13"
+             id="rect45" />
+        </g>
+        <g
+           id="platforms"
+           fill="#D3D9DF">
+          <rect
+             x="795"
+             y="262"
+             width="40"
+             height="26"
+             rx="8"
+             id="rect46" />
+          <rect
+             x="795"
+             y="332"
+             width="40"
+             height="26"
+             rx="8"
+             id="rect47" />
+          <rect
+             x="795"
+             y="402"
+             width="40"
+             height="26"
+             rx="8"
+             id="rect48" />
+          <rect
+             x="795"
+             y="472"
+             width="40"
+             height="26"
+             rx="8"
+             id="rect49" />
+          <rect
+             x="795"
+             y="542"
+             width="40"
+             height="26"
+             rx="8"
+             id="rect50" />
+        </g>
+      </g>
+      <rect
+         y="15"
+         width="960"
+         height="625"
+         rx="40"
+         fill="none"
+         stroke="#283037"
+         stroke-width="28"
+         id="rect51" />
+    </g>
+    <g
+       id="g53"
+       inkscape:label="cursor-and-trail"
+       transform="translate(0 -40)">
+      <g
+         id="cursor-trail"
+         fill="#ffffff"
+         stroke="#283037">
+        <use
+           href="#cursor-shape"
+           transform="translate(695 340) scale(1.21)"
+           opacity="0.15"
+           id="use51" />
+        <use
+           href="#cursor-shape"
+           transform="translate(830 340) scale(1.21)"
+           opacity="0.35"
+           id="use52" />
+      </g>
+      <use
+         id="cursor"
+         href="#cursor-shape"
+         transform="translate(965 340) scale(1.21)"
+         fill="#ffffff"
+         stroke="#283037" />
+    </g>
+    <g
+       id="no-pin-sign"
+       transform="translate(1424 326)"
+       filter="url(#shadow)">
+      <g
+         id="sign-disc">
+        <circle
+           id="sign-rim"
+           r="104"
+           fill="none"
+           stroke="#ffffff"
+           stroke-width="12" />
+        <circle
+           id="hole-outline"
+           r="79"
+           fill="none"
+           stroke="#ffffff"
+           stroke-width="12" />
+        <line
+           id="slash-outline"
+           x1="-92"
+           y1="-92"
+           x2="92"
+           y2="92"
+           stroke="#ffffff"
+           stroke-width="37"
+           clip-path="url(#slash-clip)" />
+        <circle
+           id="ring"
+           r="91.5"
+           fill="none"
+           stroke="#d9202a"
+           stroke-width="25" />
+        <line
+           id="slash"
+           x1="-92"
+           y1="-92"
+           x2="92"
+           y2="92"
+           stroke="#d9202a"
+           stroke-width="25"
+           clip-path="url(#slash-clip)" />
+      </g>
+      <g
+         id="pin">
+        <use
+           id="pin-outline"
+           href="#pin-shape"
+           transform="rotate(45) translate(0 -81.6) scale(0.6)"
+           fill="#ffffff"
+           stroke="#ffffff"
+           stroke-width="28"
+           stroke-linejoin="round" />
+        <use
+           id="pin-fill"
+           href="#pin-shape"
+           transform="rotate(45) translate(0 -81.6) scale(0.6)"
+           fill="#345373"
+           stroke="#345373"
+           stroke-width="8"
+           stroke-linejoin="round" />
+      </g>
+    </g>
+  </g>
+</svg>
