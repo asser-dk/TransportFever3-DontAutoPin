@@ -10,7 +10,7 @@ local function withUnpinAfterMove(value : any) : any
 		return value
 	end
 	local props = value as {string : any}
-	if type(props.onMovedChange) ~= "function" or type(props.onPinned) ~= "function" then
+	if props.pinnable ~= true or type(props.onMovedChange) ~= "function" or type(props.onPinned) ~= "function" then
 		return value
 	end
 	local onMovedChange = props.onMovedChange as function()
