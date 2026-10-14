@@ -22,6 +22,8 @@ an unpinned window no longer pins it.
   `fenris_dont_auto_pin` (expect `builtin.Window replaced`, no warnings).
 - After adding, removing or renaming files under `src/content/`, run `/tf3:stage-mod` to regenerate
   `src/_content.json`.
+- `APPLIED_WORKAROUNDS.md` lists the undocumented game internals the mod relies on. Add an entry (with its
+  fallback and in-game re-test) when introducing one; after a game update, have the user re-test every entry.
 
 ## Releases
 
