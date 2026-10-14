@@ -5,7 +5,7 @@
             "role": "CREATOR"
         }
     ],
-    "description": "Stop windows from being pinned when you (accidentally) move them around. Only windows you pin manually stay pinned.\n\nCover map © OpenStreetMap, openstreetmap.org/copyright",
+    "description": "Stop windows from being pinned when you (accidentally) move them around. Only windows you pin manually stay pinned.\n\nCover map © OpenStreetMap, openstreetmap.org/copyright\n\nSource: https://github.com/asser-dk/TransportFever3-DontAutoPin",
     "name": "Don't auto-pin moved windows",
     "summary": "Only pin windows when you click the pin.",
     "tags": [
