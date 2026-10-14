@@ -40,11 +40,11 @@
        y2="1">
       <stop
          offset="0"
-         stop-color="#F7F8F9"
+         stop-color="#2E3944"
          id="stop1" />
       <stop
          offset="1"
-         stop-color="#E4E8EC"
+         stop-color="#232B33"
          id="stop2" />
     </linearGradient>
     <radialGradient
@@ -55,8 +55,8 @@
        gradientUnits="userSpaceOnUse">
       <stop
          offset="0"
-         stop-color="#FFFFFF"
-         stop-opacity="0.85"
+         stop-color="#4A6684"
+         stop-opacity="0.35"
          id="stop3" />
       <stop
          offset="1"
@@ -64,65 +64,23 @@
          stop-opacity="0"
          id="stop4" />
     </radialGradient>
-    <linearGradient
-       id="plane"
-       x1="0"
-       y1="0"
-       x2="1"
-       y2="1">
-      <stop
-         offset="0"
-         stop-color="#D5DBE1"
-         stop-opacity="0.55"
-         id="stop5" />
-      <stop
-         offset="1"
-         stop-color="#D5DBE1"
-         stop-opacity="0"
-         id="stop6" />
-    </linearGradient>
-    <pattern
-       id="dots"
-       width="40"
-       height="40"
-       patternUnits="userSpaceOnUse">
-      <circle
-         cx="20"
-         cy="20"
-         r="2.5"
-         fill="#BCC4CC"
-         id="circle6" />
-    </pattern>
     <radialGradient
-       id="dots-fade"
+       id="vignette"
        cx="960"
        cy="540"
        r="1100"
        gradientUnits="userSpaceOnUse">
       <stop
-         offset="0.25"
-         stop-color="#FFFFFF"
+         offset="0.5"
+         stop-color="#345373"
          stop-opacity="0"
-         id="stop7" />
-      <stop
-         offset="0.7"
-         stop-color="#FFFFFF"
-         stop-opacity="0.7"
-         id="stop8" />
+         id="stop5" />
       <stop
          offset="1"
-         stop-color="#FFFFFF"
-         stop-opacity="0.15"
-         id="stop9" />
+         stop-color="#11161B"
+         stop-opacity="0.45"
+         id="stop6" />
     </radialGradient>
-    <mask
-       id="dots-mask">
-      <rect
-         width="1920"
-         height="1080"
-         fill="url(#dots-fade)"
-         id="rect9" />
-    </mask>
     <filter
        id="shadow"
        x="-0.13770324"
@@ -198,20 +156,16 @@
        width="1920"
        height="1080"
        fill="url(#bg)" />
-    <path
-       id="plane-left"
-       d="M 0 0 L 620 0 L 0 760 Z"
-       fill="url(#plane)" />
-    <path
-       id="plane-right"
-       d="M 1920 1080 L 1180 1080 L 1920 260 Z"
-       fill="url(#plane)" />
+    <image
+       id="map"
+       href="map.svg"
+       width="1920"
+       height="1080" />
     <rect
-       id="dot-grid"
+       id="vignette-edges"
        width="1920"
        height="1080"
-       fill="url(#dots)"
-       mask="url(#dots-mask)" />
+       fill="url(#vignette)" />
     <rect
        id="glow-centre"
        width="1920"
@@ -580,6 +534,16 @@
              id="rect50" />
         </g>
       </g>
+      <rect
+         id="window-rim"
+         x="-16.5"
+         y="-1.5"
+         width="993"
+         height="658"
+         rx="56.5"
+         fill="none"
+         stroke="#FFFFFF"
+         stroke-width="7" />
       <rect
          y="15"
          width="960"
