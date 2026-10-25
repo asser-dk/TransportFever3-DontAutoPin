@@ -5,7 +5,8 @@
       "Bash(lua5.2 *)",
       "Bash(magick *)",
       "Bash(rsvg-convert *)",
-      "WebFetch(domain:wiki.transportfever3.com)"
+      "WebFetch(domain:wiki.transportfever3.com)",
+      "Edit(~/Documents/notes/documentation/games/*/transport-fever-3/**)"
     ]
   },
   "enabledPlugins": {
