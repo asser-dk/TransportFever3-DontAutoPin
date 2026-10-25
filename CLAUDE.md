@@ -7,8 +7,8 @@ an unpinned window no longer pins it.
 
 ## Behaviour constraints
 
-- Only alter windows with `props.pinnable == true`. Windows without a pin button (e.g. the music player)
-  rely on move-to-pin as their only way to pin.
+- Only alter windows with `props.pinnable == true`. Windows without a pin button rely on move-to-pin
+  as their only way to pin.
 - Every missing internal (`_react.originalRecipeFn`, the original `builtin.Window`, unexpected prop
   types) must fall back to the game's unchanged behaviour with a `log.warning`, never an error.
 
