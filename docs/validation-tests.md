@@ -9,7 +9,7 @@ it.
 
 | ID | Test | Covers | Last passed |
 |---|---|---|---|
-| V1 | Dragging a window doesn't pin it | Move-to-pin suppression; both `APPLIED_WORKAROUNDS.md` entries | 2026-10-24, revision 1 |
+| V1 | Dragging a window doesn't pin it | Move-to-pin suppression; both `APPLIED_WORKAROUNDS.md` entries | 2026-10-25, revision 2 |
 
 ## V1. Dragging a window doesn't pin it
 
@@ -20,14 +20,16 @@ check the game's side either: the console's Lua state has no access to React's r
 
 Setup: any save with at least two towns, mouse input (not gamepad).
 
-1. Click a town; drag its window by the title bar.
+1. Click a town; drag its window by the title bar for a few seconds, then do the same with a pinned
+   window for comparison.
 2. Click another town.
 3. Pin the new window with its pin button, drag it, then click a third entity.
 4. Grep the game log for `fenris_dont_auto_pin`.
 
 Expected:
 
-1. The pin icon stays off.
+1. The pin icon stays off. Dragging is as smooth as dragging the pinned window, and the window doesn't
+   replay its opening animation.
 2. The first town's window is replaced by the second's (it was not pinned).
 3. The pinned window stays open and pinned.
 4. `builtin.Window replaced`, no warnings.

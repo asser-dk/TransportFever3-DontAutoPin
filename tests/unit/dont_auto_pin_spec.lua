@@ -6,7 +6,7 @@ local function fn(s)
 end
 
 describe("dont_auto_pin", function()
-	local builtinWindow, original, received, replacement, replacementApi, moved, pinned
+	local builtinWindow, original, received, replacement, replacementApi, moved, pinned, now
 
 	local function windowProps(overrides)
 		local p = {
@@ -33,6 +33,8 @@ describe("dont_auto_pin", function()
 	before_each(function()
 		tf3.reset()
 		_G.log = { message = spy.new(function() end), warning = spy.new(function() end) }
+		now = 100
+		_G.api = { util = { getApplicationTime = function() return now end } }
 		moved = spy.new(function() end)
 		pinned = spy.new(function() end)
 		builtinWindow = function() end
@@ -91,6 +93,60 @@ describe("dont_auto_pin", function()
 			local onMovedChange = props.onMovedChange
 			render(props)
 			assert.equal(onMovedChange, props.onMovedChange)
+		end)
+
+		describe("dragging a window with an id", function()
+			local function drag(props, times)
+				local onMovedChange = render(props).onMovedChange
+				for _, t in ipairs(times) do
+					now = t
+					onMovedChange()
+				end
+			end
+
+			it("runs the game's handler and unpins once at the start of a drag", function()
+				drag(windowProps({ id = "w" }), { 100 })
+				assert.spy(moved).was_called(1)
+				assert.spy(pinned).was_called_with(false)
+			end)
+
+			it("skips repeat calls within the same drag", function()
+				drag(windowProps({ id = "w" }), { 100, 100.02, 100.2 })
+				assert.spy(moved).was_called(1)
+				assert.spy(pinned).was_called(1)
+			end)
+
+			it("treats a long continuous drag as one drag", function()
+				local times = {}
+				for i = 0, 50 do
+					times[#times + 1] = 100 + i * 0.02
+				end
+				drag(windowProps({ id = "w" }), times)
+				assert.spy(moved).was_called(1)
+			end)
+
+			it("starts a new drag after a pause", function()
+				drag(windowProps({ id = "w" }), { 100, 101 })
+				assert.spy(moved).was_called(2)
+				assert.spy(pinned).was_called(2)
+			end)
+
+			it("keeps the drag state across re-renders", function()
+				drag(windowProps({ id = "w" }), { 100 })
+				drag(windowProps({ id = "w" }), { 100.02 })
+				assert.spy(moved).was_called(1)
+			end)
+
+			it("tracks windows separately", function()
+				drag(windowProps({ id = "a" }), { 100 })
+				drag(windowProps({ id = "b" }), { 100.02 })
+				assert.spy(moved).was_called(2)
+			end)
+
+			it("unpins on every call for a window without an id", function()
+				drag(windowProps(), { 100, 100.02 })
+				assert.spy(pinned).was_called(2)
+			end)
 		end)
 
 		it("passes every argument through and returns the original's result", function()

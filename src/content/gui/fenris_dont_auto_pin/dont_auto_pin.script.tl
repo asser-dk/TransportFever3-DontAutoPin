@@ -5,6 +5,12 @@ global _react : table
 
 local dont_auto_pin = {}
 
+-- The game calls onMovedChange about once per frame while a window is dragged (~27 ms apart), so a
+-- longer gap means a new drag. In seconds, like api.util.getApplicationTime.
+local DRAG_GAP = 0.25
+
+local lastMoveTime : {string : number} = {}
+
 local function withUnpinAfterMove(value : any) : any
 	if type(value) ~= "table" then
 		return value
@@ -21,11 +27,24 @@ local function withUnpinAfterMove(value : any) : any
 		copy[k] = v
 	end
 	local wasPinned = props.pinned == true
+	local id = type(props.id) == "string" and props.id as string or nil
 	copy.onMovedChange = function(...: any)
-		onMovedChange(...)
-		if not wasPinned then
-			onPinned(false)
+		if wasPinned then
+			onMovedChange(...)
+			return
 		end
+		if id then
+			local now = api.util.getApplicationTime()
+			local last = lastMoveTime[id]
+			lastMoveTime[id] = now
+			-- Same drag: pinning and unpinning again on every frame re-renders the window each time and
+			-- makes dragging choppy. The game's handler already ran once when this drag started.
+			if last and now - last < DRAG_GAP then
+				return
+			end
+		end
+		onMovedChange(...)
+		onPinned(false)
 	end
 	return copy
 end
