@@ -30,5 +30,5 @@ an unpinned window no longer pins it.
 ## Releases
 
 - Commit straight to `main`; no feature branches.
-- Each published update: bump `revision` in `src/mod.json` and add a changelog entry to the
-  `description` in `src/_metadata/modinfo.json`.
+- Each published update: bump `revision` in `src/mod.json`. The changelog goes in the Mod Hub's
+  changelog field at upload (`/tf3:stage-mod` checklist), not in `src/_metadata/modinfo.json`.
