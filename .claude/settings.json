@@ -6,6 +6,7 @@
       "Bash(magick *)",
       "Bash(rsvg-convert *)",
       "WebFetch(domain:wiki.transportfever3.com)",
+      "Bash(tf3-test *)",
       "Edit(~/Documents/notes/documentation/games/*/transport-fever-3/**)"
     ]
   },

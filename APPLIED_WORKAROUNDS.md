@@ -5,7 +5,7 @@ in-game after every game update, before the next release. Add an entry whenever 
 another one.
 
 - `_react.originalRecipeFn` (internal table in `::/gui/main/react.lua`), used to call the original
-  `builtin.Window`. Fallback: unchanged auto-pinning, with a `log.warning`. Re-test: moving an unpinned
-  entity window leaves it unpinned; the log shows `builtin.Window replaced`.
+  `builtin.Window`. Fallback: unchanged auto-pinning, with a `log.warning`. Re-test: validation test V1
+  (`docs/validation-tests.md`).
 - `builtin.Window`'s `onMovedChange` prop (missing from the typedef) and the per-window auto-pin in
-  `gui/entity_window/view_manager.tl`. Re-test: as above, and a pinned window stays pinned when moved.
+  `gui/entity_window/view_manager.tl`. Re-test: as above.

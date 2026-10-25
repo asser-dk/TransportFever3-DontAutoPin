@@ -10,6 +10,7 @@ Update this file when the stack changes.
 | GUI | TF3 React-style Lua GUI (`::/gui/main/react.lua`, `builtin.lua`); hooked via `react-replacement-config` |
 | teal-language-server | 0.2.1, connected by the `tf3` plugin; reads the repo's `tlconfig.lua` |
 | Cover image | `art/cover.svg` → `src/_metadata/0.png` via `scripts/render_cover.sh` (`rsvg-convert`, librsvg) |
+| Tests | busted 2.3.0 on Lua 5.2 via `tf3-test` (`tf3` plugin `bin/`) for `tests/unit/`; `tests/ingame/` runs in the game's console |
 | JSON validation | `npx ajv-cli@5` against `~/Documents/notes/documentation/games/references/transport-fever-3/schemas/` |
 | Claude Code | `tf3` plugin (local `transport-fever-3-modding` marketplace, `..`): skills and the edit-check hook |
 | VCS | Git |

@@ -18,8 +18,10 @@ an unpinned window no longer pins it.
   `tf3-tl check src/content/gui/fenris_dont_auto_pin/dont_auto_pin.script.tl`. The `tf3`
   plugin's hook also runs it, and schema validation of the mod's JSON files, after every edit.
 - `tlconfig.lua` and `all_def.tl` are copies of the workspace (`..`) masters; keep them in sync.
-- No automated tests. Verification is in-game by the user; afterwards grep the game log for
-  `fenris_dont_auto_pin` (expect `builtin.Window replaced`, no warnings).
+- Tests (`/tf3:test`): `tf3-test unit` runs `tests/unit/*_spec.lua` (busted); `tf3-test ingame` type-checks
+  and bundles `tests/ingame/*.tl` for the in-game console, `tf3-test results` reads them from the game log;
+  `docs/validation-tests.md` holds the manual tests (at most 10). For other in-game checks, grep the game
+  log for `fenris_dont_auto_pin` (expect `builtin.Window replaced`, no warnings).
 - After adding, removing or renaming files under `src/content/`, run `/tf3:stage-mod` to regenerate
   `src/_content.json`.
 - `APPLIED_WORKAROUNDS.md` lists the undocumented game internals the mod relies on. Add an entry (with its
