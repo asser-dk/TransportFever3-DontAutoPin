@@ -11,6 +11,56 @@ local DRAG_GAP = 0.25
 
 local lastMoveTime : {string : number} = {}
 
+-- From tf3_lib/recipe_wrap.tl
+local type Transform = function(any) : any
+local type RecipeFn = function(...: any) : TreeNodeId
+
+local recipe_wrap = {}
+
+-- The game's recipe function behind a builtin, or nil and why not.
+function recipe_wrap.original(recipe : any) : RecipeFn, string
+	local originals = type(_react) == "table" and _react.originalRecipeFn or nil
+	if type(originals) ~= "table" then
+		return nil, "_react.originalRecipeFn not found"
+	end
+	local fn = (originals as {number : any})[react.GetRecipeId(recipe as IRecipe)]
+	if type(fn) ~= "function" then
+		return nil, "original recipe not found"
+	end
+	return fn as RecipeFn, nil
+end
+
+-- Replaces the builtin; false (and a warning "<prefix>: <name> left unchanged: <reason>") when the
+-- original can't be found.
+function recipe_wrap.wrapBuiltin(replacementApi : ReactReplacementApi, recipe : any, name : string, transform : Transform, prefix : string, warn? : function(string)) : boolean
+	local callOriginal, reason = recipe_wrap.original(recipe)
+	if callOriginal == nil then
+		(warn or log.warning)(prefix .. ": " .. name .. " left unchanged: " .. reason)
+		return false
+	end
+	local function wrapped(...: any) : TreeNodeId
+		local args = table.pack(...)
+		for i = 1, args.n do
+			args[i] = transform(args[i])
+		end
+		return callOriginal(table.unpack(args, 1, args.n))
+	end
+	replacementApi.ReplaceRecipe(recipe, wrapped as any)
+	return true
+end
+
+-- A shallow copy of a props table with the given keys replaced; the game's own table stays as it is.
+function recipe_wrap.withProps(props : {string : any}, changes : {string : any}) : {string : any}
+	local copy : {string : any} = {}
+	for k, v in pairs(props) do
+		copy[k] = v
+	end
+	for k, v in pairs(changes) do
+		copy[k] = v
+	end
+	return copy
+end
+
 local function withUnpinAfterMove(value : any) : any
 	if type(value) ~= "table" then
 		return value
@@ -22,55 +72,34 @@ local function withUnpinAfterMove(value : any) : any
 	local onMovedChange = props.onMovedChange as function(...: any)
 	local onPinned = props.onPinned as function(boolean)
 
-	local copy : {string : any} = {}
-	for k, v in pairs(props) do
-		copy[k] = v
-	end
 	local wasPinned = props.pinned == true
 	local id = type(props.id) == "string" and props.id as string or nil
-	copy.onMovedChange = function(...: any)
-		if wasPinned then
-			onMovedChange(...)
-			return
-		end
-		if id then
-			local now = api.util.getApplicationTime()
-			local last = lastMoveTime[id]
-			lastMoveTime[id] = now
-			-- Same drag: pinning and unpinning again on every frame re-renders the window each time and
-			-- makes dragging choppy. The game's handler already ran once when this drag started.
-			if last and now - last < DRAG_GAP then
+	return recipe_wrap.withProps(props, {
+		onMovedChange = function(...: any)
+			if wasPinned then
+				onMovedChange(...)
 				return
 			end
-		end
-		onMovedChange(...)
-		onPinned(false)
-	end
-	return copy
+			if id then
+				local now = api.util.getApplicationTime()
+				local last = lastMoveTime[id]
+				lastMoveTime[id] = now
+				-- Same drag: pinning and unpinning again on every frame re-renders the window each time and
+				-- makes dragging choppy. The game's handler already ran once when this drag started.
+				if last and now - last < DRAG_GAP then
+					return
+				end
+			end
+			onMovedChange(...)
+			onPinned(false)
+		end,
+	})
 end
 
 function dont_auto_pin.doReplace(replacementApi : ReactReplacementApi)
-	local originalRecipeFns = type(_react) == "table" and _react.originalRecipeFn or nil
-	if type(originalRecipeFns) ~= "table" then
-		log.warning("fenris_dont_auto_pin: _react.originalRecipeFn not found, auto-pinning left unchanged")
+	if not recipe_wrap.wrapBuiltin(replacementApi, builtin.Window, "builtin.Window", withUnpinAfterMove, "fenris_dont_auto_pin") then
 		return
 	end
-	local originalWindow = (originalRecipeFns as {number : any})[react.GetRecipeId(builtin.Window as IRecipe)]
-	if type(originalWindow) ~= "function" then
-		log.warning("fenris_dont_auto_pin: original builtin.Window not found, auto-pinning left unchanged")
-		return
-	end
-	local callOriginal = originalWindow as function(...: any) : TreeNodeId
-
-	local function window(...: any) : TreeNodeId
-		local args = table.pack(...)
-		for i = 1, args.n do
-			args[i] = withUnpinAfterMove(args[i])
-		end
-		return callOriginal(table.unpack(args, 1, args.n))
-	end
-
-	replacementApi.ReplaceRecipe(builtin.Window as any, window as any)
 	log.message("fenris_dont_auto_pin: builtin.Window replaced")
 end
 

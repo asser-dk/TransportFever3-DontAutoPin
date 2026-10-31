@@ -160,13 +160,13 @@ describe("dont_auto_pin", function()
 		_G._react = {}
 		load()
 		assert.spy(replacementApi.ReplaceRecipe).was_not_called()
-		assert.spy(log.warning).was_called_with("fenris_dont_auto_pin: _react.originalRecipeFn not found, auto-pinning left unchanged")
+		assert.spy(log.warning).was_called_with("fenris_dont_auto_pin: builtin.Window left unchanged: _react.originalRecipeFn not found")
 	end)
 
 	it("leaves auto-pinning unchanged when the original builtin.Window is missing", function()
 		_G._react = { originalRecipeFn = {} }
 		load()
 		assert.spy(replacementApi.ReplaceRecipe).was_not_called()
-		assert.spy(log.warning).was_called_with("fenris_dont_auto_pin: original builtin.Window not found, auto-pinning left unchanged")
+		assert.spy(log.warning).was_called_with("fenris_dont_auto_pin: builtin.Window left unchanged: original recipe not found")
 	end)
 end)
