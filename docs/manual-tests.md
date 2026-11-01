@@ -20,16 +20,21 @@ Covers: move-to-pin suppression for windows with a pin button; both `APPLIED_WOR
 Why manual: a window drag happens in the engine's GUI; no API simulates it. In-game suites can't
 check the game's side either: the console's Lua state has no access to React's recipes or window props.
 
-Setup: any save with at least two towns, mouse input (not gamepad), loaded with the mod enabled.
+Setup: any save with at least three vehicles or lines of the same kind, mouse input (not gamepad),
+loaded with the mod enabled. Vehicle and line windows are the ones with a pin button. Open one of
+them and pin it with its pin button, for comparison.
 
-1. **Drag an unpinned window.** Click a town; drag its window by the title bar for a few seconds, then do the same with a pinned
-   window for comparison.
+1. **Drag a vehicle or line window.** Click another vehicle or line; drag its window by the title bar
+   for a few seconds without pinning it, then drag the pinned window from the setup the same way.
    Expected: The pin icon stays off. Dragging is as smooth as dragging the pinned window, and the
    window doesn't replay its opening animation.
    Log: `fenris_dont_auto_pin: builtin\.Window replaced`
-2. **Click another town.** Click another town.
-   Expected: The first town's window is replaced by the second's (it was not pinned).
-3. **Pin and drag.** Pin the new window with its pin button, drag it, then click a third entity.
+2. **Click another vehicle or line.** With the window from step 1 still unpinned (pin icon off), click
+   a third vehicle or line.
+   Expected: The step 1 window is replaced by the new one (it was not pinned); the pinned window from
+   the setup stays open.
+3. **Pin and drag.** Pin the new window with its pin button, drag it, then click any other vehicle or
+   line.
    Expected: The pinned window stays open and pinned.
 
 <!--
