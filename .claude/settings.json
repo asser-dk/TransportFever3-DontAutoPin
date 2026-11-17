@@ -8,7 +8,9 @@
       "WebFetch(domain:wiki.transportfever3.com)",
       "Bash(tf3-test *)",
       "Bash(modio-get *)",
-      "Edit(~/Documents/notes/documentation/games/*/transport-fever-3/**)"
+      "Edit(~/Documents/notes/documentation/games/*/transport-fever-3/**)",
+      "Bash(tf3-logwatch)",
+      "Bash(tf3-logwatch *)"
     ]
   },
   "enabledPlugins": {
