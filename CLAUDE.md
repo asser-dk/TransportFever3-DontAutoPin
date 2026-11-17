@@ -29,6 +29,7 @@ an unpinned window no longer pins it.
 
 ## Releases
 
-- Commit straight to `main`; no feature branches.
+- Commit straight to `main`; no feature branches, except while the game is on a Steam beta branch: then
+  all work goes on `beta/<steam branch>` (see `/tf3:modding-instructions`).
 - Each published update: bump `revision` in `src/mod.json`. The changelog goes in the Mod Hub's
   changelog field at upload (`/tf3:stage-mod` checklist), not in `src/_metadata/modinfo.json`.
